@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#071a32" />
+    <title>Phrase Lab — 中国語の文を組み立てる</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Phrase Lab ホーム"><span class="brand-mark">文</span><span>Phrase<span class="accent">Lab</span></span></a>
+        <span class="eyebrow">CHINESE · SENTENCE PRACTICE</span>
+      </header>
+
+      <section class="intro">
+        <p class="kicker">語句をつないで、文にする。</p>
+        <h1>中国語の文を<br /><span class="accent">自分で組み立てよう。</span></h1>
+        <p class="lead">聞いたり読んだりした中国語を、語順から身につける練習です。</p>
+      </section>
+
+      <section class="practice-card" aria-labelledby="practice-title">
+        <div class="card-head">
+          <div><p class="step">PRACTICE 01</p><h2 id="practice-title">並び替え練習</h2></div>
+          <label class="level-picker">レベル<select id="level"><option>HSK1</option><option>HSK2</option></select></label>
+        </div>
+        <p id="prompt" class="prompt">練習を始めてください。</p>
+        <div id="answer" class="answer" aria-live="polite"><span class="placeholder">ここに語句が並びます</span></div>
+        <div id="choices" class="choices" aria-label="語句の選択肢"></div>
+        <div class="actions"><button id="clear" class="button secondary" type="button">やり直す</button><button id="check" class="button primary" type="button" disabled>答え合わせ</button></div>
+        <div id="result" class="result" aria-live="polite"></div>
+      </section>
+
+      <footer><span>学習データはこのデモ内で処理されます。</span><span>Polyglot Phrase Lab · Prototype</span></footer>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

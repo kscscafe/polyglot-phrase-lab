@@ -1,0 +1,15 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+**/build/
+**/bin/
+**/obj/
+**/target/
+**/node_modules/
+coverage/
+*.class
+*.o
+*.a
+*.so
+*.dylib

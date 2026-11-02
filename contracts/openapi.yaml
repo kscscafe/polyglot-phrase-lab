@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: Polyglot Phrase Lab API
+  version: 0.1.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/health:
+    get:
+      responses:
+        '200': { description: API is ready }
+  /api/phrases:
+    get:
+      summary: List example sentences
+      parameters:
+        - in: query
+          name: level
+          schema: { type: string, example: HSK1 }
+      responses:
+        '200': { description: Phrase list }
+  /api/practice/new:
+    get:
+      summary: Create a shuffled word-order exercise
+      parameters:
+        - in: query
+          name: level
+          schema: { type: string }
+      responses:
+        '200': { description: Exercise without answer key }
+  /api/practice/check:
+    post:
+      summary: Check a submitted word order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [phraseId, tokens]
+              properties:
+                phraseId: { type: string }
+                tokens: { type: array, items: { type: string } }
+      responses:
+        '200': { description: Correctness and explanation }
